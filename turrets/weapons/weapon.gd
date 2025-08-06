@@ -13,6 +13,7 @@ var _area_2d := _create_area_2d() # No need to onready as there's not dynamic in
 func _ready() -> void:
 	_create_nodes()
 	_connect_signals()
+	_setup_nodes()
 
 
 func _create_nodes() -> void:
@@ -23,6 +24,10 @@ func _create_nodes() -> void:
 
 func _connect_signals() -> void:
 	_timer.timeout.connect(_attack)
+
+
+func _setup_nodes() -> void:
+	_timer.start()
 
 
 func _create_area_2d() -> Area2D:
@@ -55,4 +60,4 @@ func _create_timer() -> Timer:
 
 
 func _attack() -> void:
-	print("Attacking!")
+	print("Base Attack!")
