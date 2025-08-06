@@ -28,6 +28,7 @@ func _connect_signals() -> void:
 
 func _setup_nodes() -> void:
 	_timer.start()
+	z_index = 10 # Ensure the weapon is rendered above other objects
 
 
 func _create_area_2d() -> Area2D:

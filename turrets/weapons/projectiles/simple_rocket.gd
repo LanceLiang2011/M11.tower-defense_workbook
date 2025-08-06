@@ -7,6 +7,7 @@ var _traveled_distance: float = 0.0
 
 func _init():
 	monitorable = false # the rocket is not detectable, it detects others
+	z_as_relative = false # Ensure the rocket won't always render on top of it's parent
 
 
 func _physics_process(delta: float) -> void:
