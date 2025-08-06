@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://by2qd2ww60lxl"]
+
+[ext_resource type="Texture2D" uid="uid://dmpm4tf4uk7yn" path="res://turrets/weapons/projectiles/rocket.png" id="1_vpe4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e70mn"]
+size = Vector2(43, 12)
+
+[node name="SimpleRocket" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-26, 0)
+texture = ExtResource("1_vpe4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11.5, 0)
+shape = SubResource("RectangleShape2D_e70mn")
