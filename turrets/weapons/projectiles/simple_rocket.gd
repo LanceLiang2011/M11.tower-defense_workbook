@@ -2,6 +2,7 @@ class_name SimpleRocket extends Area2D
 
 @export var speed: float = 350.0
 @export var max_distance: float = 1000.0
+@export var damage: float = 20.0
 
 var _traveled_distance: float = 0.0
 
@@ -40,6 +41,6 @@ func _on_area_entered(other: Area2D) -> void:
 	if other is Mob:
 		var mob: Mob = other as Mob
 
-		mob.take_damage(20) # TODO: Remove magic number, use a variable for damage
+		mob.take_damage(damage)
 
 		explode()
