@@ -1,11 +1,11 @@
 @icon("res://icons/icon_mob.svg")
 class_name Mob extends Area2D
 
-var max_health: int = 100
+var max_health: float = 100
 
-var _health: int
+var _health: float
 
-var health: int:
+var health: float:
 	get:
 		return _health
 	set(value):
@@ -32,6 +32,10 @@ func get_nodes() -> void:
 
 func setup_nodes() -> void:
 	health = max_health
+
+
+func take_damage(damage: float) -> void:
+	health -= damage
 
 
 func _die() -> void:
