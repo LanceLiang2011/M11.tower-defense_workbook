@@ -3,7 +3,7 @@ class_name Mob extends Area2D
 
 var max_health: int = 100
 
-var _health: int = max_health
+var _health: int
 
 var health: int:
 	get:
@@ -23,6 +23,7 @@ var _health_bar: ProgressBar = null
 
 func _ready() -> void:
 	get_nodes()
+	setup_nodes()
 
 	# TODO: Remove temp testing code for die
 	var tween := create_tween()
@@ -31,6 +32,10 @@ func _ready() -> void:
 
 func get_nodes() -> void:
 	_health_bar = %HealthBar
+
+
+func setup_nodes() -> void:
+	health = max_health
 
 
 func _die() -> void:
