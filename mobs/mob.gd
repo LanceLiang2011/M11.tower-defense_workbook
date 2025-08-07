@@ -25,10 +25,6 @@ func _ready() -> void:
 	get_nodes()
 	setup_nodes()
 
-	# TODO: Remove temp testing code for die
-	var tween := create_tween()
-	tween.tween_property(self, "health", 0, 5.0)
-
 
 func get_nodes() -> void:
 	_health_bar = %HealthBar

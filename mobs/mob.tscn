@@ -44,5 +44,3 @@ theme_override_styles/background = SubResource("StyleBoxFlat_bteyy")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fgbma")
 value = 50.0
 show_percentage = false
-
-[node name="DeleteMe" type="Camera2D" parent="."]
