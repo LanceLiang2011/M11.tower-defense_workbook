@@ -9,6 +9,7 @@ texture = ExtResource("1_q2m6g")
 script = ExtResource("2_5dibf")
 
 [node name="Mob" parent="." instance=ExtResource("3_igcxb")]
+position = Vector2(310, -1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
