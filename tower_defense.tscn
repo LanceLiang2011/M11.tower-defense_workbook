@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=4 uid="uid://cw8pgfkugv14u"]
+[gd_scene load_steps=4 format=4 uid="uid://cw8pgfkugv14u"]
 
 [ext_resource type="TileSet" uid="uid://buxud23yyccyi" path="res://map/tileset.tres" id="1_8fhpj"]
+[ext_resource type="PackedScene" uid="uid://oxi07u12ff6w" path="res://mobs/mob.tscn" id="2_axwmk"]
+
+[sub_resource type="Curve2D" id="Curve2D_8fhpj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1984, 320, 0, 0, 0, 0, 1216, 320, 0, 0, 0, 0, 1216, 832, 0, 0, 0, 0, 832, 832, 0, 0, 0, 0, 832, 320, 0, 0, 0, 0, 448, 320, 0, 0, 0, 0, 448, 704, 0, 0, 0, 0, 192, 704, 0, 0, 0, 0, 192, 960, 0, 0, 0, 0, -64, 960)
+}
+point_count = 10
 
 [node name="TowerDefense" type="Node2D"]
 
@@ -11,3 +18,12 @@ tile_set = ExtResource("1_8fhpj")
 [node name="Roads" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAABAAcAAAABAAEAAAABAAYAAAACAAEAAAABAAUAAAAAAAAAAAAJAAUAAAACAAEAAAAJAAQAAAACAAEAAAAJAAMAAAACAAEAAAAJAAIAAAAAAAAAAAAKAAIAAAACAAAAAAALAAIAAAACAAAAAAAMAAIAAAACAAAAAAANAAIAAAACAAAAAAAOAAIAAAACAAAAAAAPAAIAAAAFAAAAAAAGAAQAAAACAAEAAAAGAAMAAAACAAEAAAAGAAIAAAABAAAAAAAFAAIAAAACAAAAAAAEAAIAAAACAAAAAAADAAIAAAAAAAAAAAADAAMAAAACAAEAAAADAAQAAAACAAEAAAADAAUAAAABAAEAAAACAAUAAAACAAAAAAAAAAcAAAACAAAAAAD//wcAAAAGAAEAAAAJAAYAAAABAAEAAAAIAAYAAAACAAAAAAAHAAYAAAACAAAAAAAGAAYAAAAAAAEAAAAGAAUAAAACAAEAAAA=")
 tile_set = ExtResource("1_8fhpj")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_8fhpj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1984, 320)
+rotation = 3.14159
+
+[node name="Mob" parent="Path2D/PathFollow2D" instance=ExtResource("2_axwmk")]
