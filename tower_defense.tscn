@@ -22,8 +22,8 @@ tile_set = ExtResource("1_8fhpj")
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_8fhpj")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="MobPathFollow" type="PathFollow2D" parent="Path2D"]
 position = Vector2(1984, 320)
 rotation = 3.14159
 
-[node name="Mob" parent="Path2D/PathFollow2D" instance=ExtResource("2_axwmk")]
+[node name="Mob" parent="Path2D/MobPathFollow" instance=ExtResource("2_axwmk")]

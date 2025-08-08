@@ -1,9 +1,9 @@
 @icon("res://icons/icon_mob.svg")
 class_name Mob extends Area2D
 
+@export var speed: float = 100.0
 
 var _tween: Tween = null
-
 var max_health: float = 100
 
 
