@@ -23,18 +23,16 @@ var health: float:
 		if health <= 0:
 			_die()
 
-
-var _health_bar: ProgressBar = null
-
+@onready var _health_bar: ProgressBar = %HealthBar
+@onready var _bar_pivot: Node2D = %BarPivot
 
 func _ready() -> void:
-	get_nodes()
 	setup_nodes()
 
 
-func get_nodes() -> void:
-	_health_bar = %HealthBar
-
+func _physics_process(_delta: float) -> void:
+	_bar_pivot.global_rotation = 0.0 # Make sure the pivot won't rotate with path
+	
 
 func setup_nodes() -> void:
 	health = max_health

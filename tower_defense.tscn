@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://cw8pgfkugv14u"]
+[gd_scene load_steps=5 format=4 uid="uid://cw8pgfkugv14u"]
 
 [ext_resource type="TileSet" uid="uid://buxud23yyccyi" path="res://map/tileset.tres" id="1_8fhpj"]
 [ext_resource type="PackedScene" uid="uid://oxi07u12ff6w" path="res://mobs/mob.tscn" id="2_axwmk"]
+[ext_resource type="Script" uid="uid://p1v6i4it8ltx" path="res://mobs/mob_path_follow.gd" id="2_g65fu"]
 
 [sub_resource type="Curve2D" id="Curve2D_8fhpj"]
 _data = {
@@ -25,5 +26,6 @@ curve = SubResource("Curve2D_8fhpj")
 [node name="MobPathFollow" type="PathFollow2D" parent="Path2D"]
 position = Vector2(1984, 320)
 rotation = 3.14159
+script = ExtResource("2_g65fu")
 
 [node name="Mob" parent="Path2D/MobPathFollow" instance=ExtResource("2_axwmk")]
