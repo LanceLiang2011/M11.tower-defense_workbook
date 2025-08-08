@@ -6,22 +6,21 @@ var _tween: Tween = null
 
 var max_health: float = 100
 
-var _health: float
 
 var health: float:
 	get:
-		return _health
+		return health
 	set(value):
-		_health = clamp(value, 0, max_health)
+		health = clamp(value, 0, max_health)
 
 		if _health_bar:
 			if _tween:
 				_tween.kill() # Stop any previous tween
 			
 			_tween = create_tween()
-			_tween.tween_property(_health_bar, "value", _health, 0.3)
+			_tween.tween_property(_health_bar, "value", health, 0.3)
 
-		if _health <= 0:
+		if health <= 0:
 			_die()
 
 
@@ -43,6 +42,10 @@ func setup_nodes() -> void:
 
 func take_damage(damage: float) -> void:
 	health -= damage
+	var damage_indicator: DamageIndicator = preload("res://mobs/damage_indicator.tscn").instantiate()
+	get_tree().current_scene.add_child(damage_indicator)
+	damage_indicator.display_amount(damage)
+	damage_indicator.global_position = global_position
 
 
 func _die() -> void:
