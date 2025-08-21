@@ -1,0 +1,91 @@
+# Godot 4 specific ignores
+.godot/
+.import/
+
+# Godot-specific files and folders
+*.tmp
+export_presets.cfg
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# node_modules/
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Godot addons with sensitive data
+# (uncomment if you have addons that shouldn't be committed)
+# addons/*/
+
+# Build artifacts
+builds/
+dist/
+*.pck
+
+# Temporary files
+*.tmp~
+*.bak
+*.backup
+*~
+
+# User-specific files
+*.sublime-project
+*.sublime-workspace

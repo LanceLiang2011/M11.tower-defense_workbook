@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://fv3jtyjom5fv"]
+
+[ext_resource type="Texture2D" uid="uid://c06dsq2gfbcd8" path="res://mobs/mouse_01.png" id="1_bteyy"]
+[ext_resource type="Script" uid="uid://bxvhdohg74wks" path="res://mobs/mob.gd" id="1_fgbma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgbma"]
+radius = 46.0109
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgbma"]
+bg_color = Color(0.156863, 0.0784314, 0.305882, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7hwu"]
+bg_color = Color(0.623529, 0.866667, 0.317647, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Mob" type="Area2D"]
+script = ExtResource("1_fgbma")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bteyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fgbma")
+
+[node name="BarPivot" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="HealthBar" type="ProgressBar" parent="BarPivot"]
+unique_name_in_owner = true
+offset_left = -55.0
+offset_top = -85.0
+offset_right = 59.0
+offset_bottom = -68.0
+theme_override_styles/background = SubResource("StyleBoxFlat_fgbma")
+theme_override_styles/fill = SubResource("StyleBoxFlat_p7hwu")
+value = 50.0
+show_percentage = false
