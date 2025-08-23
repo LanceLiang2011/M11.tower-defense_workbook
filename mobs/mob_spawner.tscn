@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cyiqk6fgdx8qk"]
+
+[node name="MobSpawner" type="Node2D"]
