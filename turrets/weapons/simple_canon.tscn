@@ -1,15 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://2g7ne8cttupm"]
+[gd_scene load_steps=3 format=3 uid="uid://2g7ne8cttupm"]
 
 [ext_resource type="Texture2D" uid="uid://cv328i4tw2cc1" path="res://turrets/weapons/simple_cannon.png" id="1_y8kw3"]
 [ext_resource type="Script" uid="uid://cfplnuexu8osu" path="res://turrets/weapons/simple_canon.gd" id="1_yukeh"]
-[ext_resource type="PackedScene" uid="uid://fv3jtyjom5fv" path="res://mobs/mob.tscn" id="3_6602m"]
 
 [node name="SimpleCanon" type="Sprite2D"]
 texture = ExtResource("1_y8kw3")
 script = ExtResource("1_yukeh")
-
-[node name="Mob" parent="." instance=ExtResource("3_6602m")]
-position = Vector2(197, 0)
 
 [node name="DeleteMe" type="Camera2D" parent="."]
 
