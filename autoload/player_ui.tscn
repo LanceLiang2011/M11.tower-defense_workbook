@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbtycur80jqoe"]
+
+[ext_resource type="Texture2D" uid="uid://cr7d6dy88ohwf" path="res://ui/health_bar_background.png" id="1_b85np"]
+[ext_resource type="Script" uid="uid://bb0lgmek1bcq6" path="res://autoload/player_ui.gd" id="1_jc508"]
+[ext_resource type="Texture2D" uid="uid://ofew82gbqai4" path="res://ui/heart.png" id="2_v3lpr"]
+
+[node name="PlayerUI" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_jc508")
+
+[node name="HealthBarBackground" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 444.0
+offset_bottom = 78.0
+mouse_filter = 2
+texture = ExtResource("1_b85np")
+
+[node name="HeartContainer" type="HBoxContainer" parent="HealthBarBackground"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 15.0
+offset_top = -20.0
+offset_right = 369.0
+offset_bottom = 37.0
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="TextureRect" type="TextureRect" parent="HealthBarBackground/HeartContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_v3lpr")
+
+[node name="TextureRect2" type="TextureRect" parent="HealthBarBackground/HeartContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_v3lpr")
+
+[node name="TextureRect3" type="TextureRect" parent="HealthBarBackground/HeartContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_v3lpr")
+
+[node name="TextureRect4" type="TextureRect" parent="HealthBarBackground/HeartContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_v3lpr")
+
+[node name="TextureRect5" type="TextureRect" parent="HealthBarBackground/HeartContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_v3lpr")
