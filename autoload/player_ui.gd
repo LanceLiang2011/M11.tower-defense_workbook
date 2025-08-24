@@ -10,8 +10,6 @@ var health: int:
 
 func _ready() -> void:
 	health = MAX_HEALTH
-	var tween := create_tween()
-	tween.tween_property(self, "health", 0, 2.0)
 
 
 func get_health() -> int:
