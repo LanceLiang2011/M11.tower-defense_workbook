@@ -1,6 +1,11 @@
 extends Control
 
+signal health_depleted
+
 @onready var heart_container: HBoxContainer = %HeartContainer
+@onready var game_over_screen: ColorRect = %GameOverScreen
+@onready var restart_button: Button = %RestartButton
+
 
 const MAX_HEALTH: int = 5
 
@@ -10,6 +15,8 @@ var health: int:
 
 func _ready() -> void:
 	health = MAX_HEALTH
+	game_over_screen.visible = false
+	restart_button.pressed.connect(_on_restart_button_pressed)
 
 
 func get_health() -> int:
@@ -21,3 +28,25 @@ func set_health(value: int) -> void:
 
 	for heart in heart_container.get_children():
 		heart.visible = heart.get_index() < health
+	
+	if health == 0:
+		_show_game_over_screen()
+
+
+func _show_game_over_screen() -> void:
+	game_over_screen.visible = true
+	get_tree().paused = true
+
+
+func reset_health() -> void:
+	health = MAX_HEALTH
+
+
+func _on_restart_button_pressed() -> void:
+	if not game_over_screen.visible:
+		return
+
+	reset_health()
+	game_over_screen.visible = false
+	get_tree().paused = false
+	health_depleted.emit()
