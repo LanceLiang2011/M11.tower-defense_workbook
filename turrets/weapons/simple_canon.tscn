@@ -7,8 +7,6 @@
 texture = ExtResource("1_y8kw3")
 script = ExtResource("1_yukeh")
 
-[node name="DeleteMe" type="Camera2D" parent="."]
-
 [node name="RocketSpawnPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(55, 0)

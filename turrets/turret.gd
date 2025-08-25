@@ -9,6 +9,7 @@ var weapon: Weapon = null
 
 func _ready() -> void:
 	set_weapon_scene(weapon_scene)
+	texture = preload("turret_base.png")
 
 
 func set_weapon_scene(new_scene: PackedScene) -> void:

@@ -21,6 +21,8 @@ class_name MobSpawner extends Node2D
 	},
 ]
 
+var _mob_destroyed: int = 0
+
 ## The mob to spawn
 @export var mob_packed_scene := preload("../mobs/mob.tscn")
 
@@ -70,6 +72,9 @@ func spawn_mob() -> void:
 	mob_path_follow.mob = mob
 	#END:spawn_one_mob
 
+	mob.tree_exited.connect(_on_mob_destroyed)
+	
+
 	#ANCHOR:mob_count
 	_remaining_mobs -= 1
 	if _remaining_mobs == 0:
@@ -77,3 +82,18 @@ func spawn_mob() -> void:
 		_current_wave_index += 1
 		_wave_delay_timer.start()
 	#END:mob_count
+
+func get_total_mobs_to_spawn() -> int:
+	var total_mobs := 0
+	for wave in waves:
+		total_mobs += wave.mobs_count
+
+	return total_mobs
+
+
+func _on_mob_destroyed() -> void:
+	_mob_destroyed += 1
+
+	if _mob_destroyed == get_total_mobs_to_spawn():
+		if PlayerUi.health > 0:
+			PlayerUi._on_game_win()
